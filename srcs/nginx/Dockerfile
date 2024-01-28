@@ -1,4 +1,4 @@
-FROM alpine:3.17
+FROM alpine:latest
 
 RUN addgroup -g 101 -S nginx
 RUN adduser -S -D -H -u 101 -h /var/cache/nginx \
