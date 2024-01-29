@@ -14,21 +14,25 @@ export function login()
 	titleNav.href = '/';
 	titleNav.textContent = 'Transcendance';
 
-	const btnNav = document.createElement('button');
-	btnNav.classList.add('navbar-toggler');
-	btnNav.type = 'button';
-	btnNav.setAttribute('data-bs-toggle', 'collapse');
-	btnNav.setAttribute('data-bs-target', '#navbarNav');
-	btnNav.setAttribute('aria-controls', 'navbarNav');
-	btnNav.setAttribute('aria-expanded', 'false');
-	btnNav.setAttribute('aria-label', 'Toggle navigation');
+	const profileHeader = document.createElement('div');
+	profileHeader.classList.add('profile-header');
 
-	const spanElement = document.createElement('span');
-	spanElement.classList.add('navbar-toggler-icon');
+	const iconProfile = document.createElement('img');
+	iconProfile.src = '/static/img/default_avatar.jpg';
+	iconProfile.style.width = '30px';
+	iconProfile.style.height = '30px';
+	iconProfile.style.borderRadius = '50%';
+	iconProfile.style.display = 'inline-block';
 
-	btnNav.appendChild(spanElement);
+	const loginHeader = document.createElement('p');
+	loginHeader.textContent = 'Username';
+	loginHeader.style.marginRight = '5px';
+	loginHeader.style.display = 'inline-block';
+
+	profileHeader.appendChild(loginHeader);
+	profileHeader.appendChild(iconProfile);
 	containerNav.appendChild(titleNav);
-	containerNav.appendChild(btnNav);
+	containerNav.appendChild(profileHeader);
 	nav.appendChild(containerNav);
 	header.appendChild(nav);
 
