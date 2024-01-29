@@ -23,10 +23,11 @@ export function login()
 	iconProfile.style.height = '30px';
 	iconProfile.style.borderRadius = '50%';
 	iconProfile.style.display = 'inline-block';
+	iconProfile.style.margin = '5px';
 
 	const loginHeader = document.createElement('p');
 	loginHeader.textContent = 'Username';
-	loginHeader.style.marginRight = '5px';
+	loginHeader.style.margin = '5px';
 	loginHeader.style.display = 'inline-block';
 
 	profileHeader.appendChild(loginHeader);
