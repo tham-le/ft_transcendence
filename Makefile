@@ -2,8 +2,10 @@ DOCKER=django
 
 all: up
 
+reset: down build up
+
 exec:
-	docker exec -it $(DOCKER) sh
+	docker exec -it $(DOCKER) bash
 
 ps:
 	docker compose ps
