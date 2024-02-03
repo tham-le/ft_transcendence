@@ -80,7 +80,7 @@ export function signin()
 	const confirmPasswordLabel = document.createElement('label');
 	confirmPasswordLabel.classList.add('form-label');
 	confirmPasswordLabel.setAttribute('for', 'confirmPasswordInput');
-	confirmPasswordLabel.textContent = 'Password';
+	confirmPasswordLabel.textContent = 'Confirm Password';
 
 	const confirmPasswordInput = document.createElement('input');
 	confirmPasswordInput.classList.add('form-control');
@@ -97,14 +97,30 @@ export function signin()
 	birthdateInput.type = 'date';
 	birthdateInput.id = 'birthdateInput';
 
-	// const sexLabel = document.createElement('label');
-	// sexLabel.classList.add('form-label');
-	// sexLabel.setAttribute('for', 'sexInput');
-	// sexLabel.textContent = "Sex";
+	const sexLabel = document.createElement('label');
+	sexLabel.classList.add('form-label');
+	sexLabel.setAttribute('for', 'sexInput');
+	sexLabel.textContent = "Sex";
+	
+	const sexInput = document.createElement('select');
+	sexInput.classList.add('form-select');
+	sexInput.id = 'sexInput';
 
-	// const sexInput = document.createElement('select');
-	// sexInput.classList.add('form-select');
-	// sexInput.id = 'sexInput';
+	const optionVide = document.createElement('option');
+	optionVide.value = '';
+	optionVide.textContent = '';
+	
+	const optionHomme = document.createElement('option');
+	optionHomme.value = 'homme';
+	optionHomme.textContent = 'Homme';
+	
+	const optionFemme = document.createElement('option');
+	optionFemme.value = 'femme';
+	optionFemme.textContent = 'Femme';
+	
+	sexInput.appendChild(optionVide);
+	sexInput.appendChild(optionHomme);
+	sexInput.appendChild(optionFemme);
 
 	const imageLabel = document.createElement('label');
 	imageLabel.classList.add('form-label');
@@ -145,6 +161,8 @@ export function signin()
 	form.appendChild(confirmPasswordInput);
 	form.appendChild(birthdateLabel);
 	form.appendChild(birthdateInput);
+	form.appendChild(sexLabel);
+	form.appendChild(sexInput);
 	form.appendChild(imageLabel);
 	form.appendChild(imageInput);
 	form.appendChild(btnSignIn);

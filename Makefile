@@ -5,7 +5,7 @@ all: up
 reset: down build up
 
 exec:
-	docker exec -it $(DOCKER) bash
+	docker exec -it $(DOCKER) sh
 
 ps:
 	docker compose ps
