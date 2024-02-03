@@ -19,6 +19,8 @@ up:
 down:
 	docker compose down
 
+reset: down up restart logs
+
 restart:
 	docker compose restart
 

@@ -2,6 +2,46 @@ import * as THREE from 'three';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { header } from './app.js';
+
+// HEADER
+
+function doHeader()
+{
+	const nav = document.createElement('nav');
+	nav.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'bg-light');
+
+	const containerNav = document.createElement('div');
+	containerNav.classList.add('container');
+
+	const titleNav = document.createElement('a');
+	titleNav.classList.add('navbar-brand');
+	titleNav.href = '/games';
+	titleNav.textContent = 'Transcendance';
+
+	const profileHeader = document.createElement('div');
+	profileHeader.classList.add('profile-header');
+
+	const iconProfile = document.createElement('img');
+	iconProfile.src = '/static/img/default_avatar.jpg';
+	iconProfile.style.width = '30px';
+	iconProfile.style.height = '30px';
+	iconProfile.style.borderRadius = '50%';
+	iconProfile.style.display = 'inline-block';
+	iconProfile.style.margin = '5px';
+
+	const loginHeader = document.createElement('p');
+	loginHeader.textContent = 'Username';
+	loginHeader.style.margin = '5px';
+	loginHeader.style.display = 'inline-block';
+
+	profileHeader.appendChild(loginHeader);
+	profileHeader.appendChild(iconProfile);
+	containerNav.appendChild(titleNav);
+	containerNav.appendChild(profileHeader);
+	nav.appendChild(containerNav);
+	header.appendChild(nav);
+}
 
 const X_SIZE_MAP = 20;
 
@@ -30,6 +70,8 @@ await loadFont('https://threejs.org/examples/fonts/helvetiker_regular.typeface.j
 	});
 
 export function pong3D() {
+
+	doHeader();
 
 	class Arena {
 		constructor(scene) {

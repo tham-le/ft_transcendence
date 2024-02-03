@@ -20,6 +20,8 @@ from transcendance import views
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('home/', views.index, name='home'),
-    path('pong/', views.index, name='game'),
+	path('login/', views.index, name='login'),
+	path('signin/', views.index, name='signin'),
+	path('games/', views.index, name='game'),
+    path('pong/', views.index, name='pong'),
 ]

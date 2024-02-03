@@ -1,0 +1,9 @@
+.pong {
+	background-image: url("/static/img/pong.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 500px;
+	height: 250px;
+	cursor: pointer;
+}
