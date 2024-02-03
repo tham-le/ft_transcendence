@@ -1,4 +1,19 @@
 import { main, header, footer } from './app.js';
+import { createFormItem } from './utils.js';
+
+const formFields = [
+    { label: 'Username', type: 'text', id: 'userNameInput' },
+    { label: 'Email address', type: 'email', id: 'emailInput' },
+    { label: 'Password', type: 'password', id: 'passwordInput' },
+    { label: 'Confirm Password', type: 'password', id: 'confirmPasswordInput' },
+    { label: 'Birthdate', type: 'date', id: 'birthdateInput' },
+    { label: 'Sex', type: 'select', id: 'sexInput', options: [
+        { value: '', text: '' },
+        { value: 'homme', text: 'Homme' },
+        { value: 'femme', text: 'Femme' }
+    ] },
+    { label: 'Image Profile', type: 'file', id: 'imageInput' },
+];
 
 export function signin()
 {
@@ -43,95 +58,18 @@ export function signin()
 	formContainer.id = 'signin';
 
 	const form = document.createElement('form');
+	form.method = 'post';
+	form.action = '/signin';
 
 	const title = document.createElement('h1');
 	title.textContent = 'Sign In';
 
-	const userNameLabel = document.createElement('label');
-	userNameLabel.classList.add('form-label');
-	userNameLabel.setAttribute('for', 'userNameInput');
-	userNameLabel.textContent = 'Username';
-
-	const userNameInput = document.createElement('input');
-	userNameInput.classList.add('form-control');
-	userNameInput.type = 'name';
-	userNameInput.id = 'userNameInput';
-
-	const emailLabel = document.createElement('label');
-	emailLabel.classList.add('form-label');
-	emailLabel.setAttribute('for', 'emailInput');
-	emailLabel.textContent = 'Email address';
-
-	const emailInput = document.createElement('input');
-	emailInput.classList.add('form-control');
-	emailInput.type = 'email';
-	emailInput.id = 'emailInput';
-
-	const passwordLabel = document.createElement('label');
-	passwordLabel.classList.add('form-label');
-	passwordLabel.setAttribute('for', 'passwordInput');
-	passwordLabel.textContent = 'Password';
-
-	const passwordInput = document.createElement('input');
-	passwordInput.classList.add('form-control');
-	passwordInput.type = 'password';
-	passwordInput.id = 'passwordInput';
-
-	const confirmPasswordLabel = document.createElement('label');
-	confirmPasswordLabel.classList.add('form-label');
-	confirmPasswordLabel.setAttribute('for', 'confirmPasswordInput');
-	confirmPasswordLabel.textContent = 'Confirm Password';
-
-	const confirmPasswordInput = document.createElement('input');
-	confirmPasswordInput.classList.add('form-control');
-	confirmPasswordInput.type = 'password';
-	confirmPasswordInput.id = 'confirmPasswordInput';
-
-	const birthdateLabel = document.createElement('label');
-	birthdateLabel.classList.add('form-label');
-	birthdateLabel.setAttribute('for', 'birthdateInput');
-	birthdateLabel.textContent = 'Birthdate';
-
-	const birthdateInput = document.createElement('input');
-	birthdateInput.classList.add('form-control');
-	birthdateInput.type = 'date';
-	birthdateInput.id = 'birthdateInput';
-
-	const sexLabel = document.createElement('label');
-	sexLabel.classList.add('form-label');
-	sexLabel.setAttribute('for', 'sexInput');
-	sexLabel.textContent = "Sex";
+	formFields.forEach(field => {
+		const { label, input } = createFormItem(field.label, field.type, field.id, field.options);
+		form.appendChild(label);
+		form.appendChild(input);
+	});
 	
-	const sexInput = document.createElement('select');
-	sexInput.classList.add('form-select');
-	sexInput.id = 'sexInput';
-
-	const optionVide = document.createElement('option');
-	optionVide.value = '';
-	optionVide.textContent = '';
-	
-	const optionHomme = document.createElement('option');
-	optionHomme.value = 'homme';
-	optionHomme.textContent = 'Homme';
-	
-	const optionFemme = document.createElement('option');
-	optionFemme.value = 'femme';
-	optionFemme.textContent = 'Femme';
-	
-	sexInput.appendChild(optionVide);
-	sexInput.appendChild(optionHomme);
-	sexInput.appendChild(optionFemme);
-
-	const imageLabel = document.createElement('label');
-	imageLabel.classList.add('form-label');
-	imageLabel.setAttribute('for', 'imageInput');
-	imageLabel.textContent = 'Image Profile';
-
-	const imageInput = document.createElement('input');
-	imageInput.classList.add('form-control');
-	imageInput.type = 'file';
-	imageInput.id = 'imageInput';
-
 	const btnSignIn = document.createElement('button');
 	btnSignIn.classList.add('btn', 'btn-primary', 'btn-margin');
 	btnSignIn.type = 'submit';
@@ -140,7 +78,7 @@ export function signin()
 	btnSignIn.style.marginRight = 'auto';
 	btnSignIn.style.display = 'block';
 	btnSignIn.textContent = 'Sign In';
-
+	
 	const btn42 = document.createElement('button');
 	btn42.classList.add('btn', 'btn-secondary', 'btn-margin');
 	btn42.type = 'submit';
@@ -150,21 +88,6 @@ export function signin()
 	btn42.style.display = 'block';
 	btn42.textContent = 'Sign In with 42';
 	
-	form.appendChild(title);
-	form.appendChild(userNameLabel);
-	form.appendChild(userNameInput);
-	form.appendChild(emailLabel);
-	form.appendChild(emailInput);
-	form.appendChild(passwordLabel);
-	form.appendChild(passwordInput);
-	form.appendChild(confirmPasswordLabel);
-	form.appendChild(confirmPasswordInput);
-	form.appendChild(birthdateLabel);
-	form.appendChild(birthdateInput);
-	form.appendChild(sexLabel);
-	form.appendChild(sexInput);
-	form.appendChild(imageLabel);
-	form.appendChild(imageInput);
 	form.appendChild(btnSignIn);
 	form.appendChild(btn42);
 	formContainer.appendChild(form);

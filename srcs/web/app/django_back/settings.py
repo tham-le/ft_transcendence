@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["www.transcendance.42.fr", "transcendance.42.fr", "localhost", 
 # Application definition
 
 INSTALLED_APPS = [
+	'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+	'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -131,6 +133,16 @@ STATIC_ROOT = '/var/www/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Security
+
+# CORS
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
+CORS_ALLOW_HEADERS = ['*'] # need to be changed
+CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOWED_ORIGINS = [
+#     'https://localhost:8080',
+# 	'https://0.0.0.0:8080',
+# ]
 
 # Utiliser le header HTTP X-XSS-Protection
 SECURE_BROWSER_XSS_FILTER = True

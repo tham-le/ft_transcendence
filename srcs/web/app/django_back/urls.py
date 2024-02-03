@@ -15,13 +15,14 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path
+# from django.urls import include
 from transcendance import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-	path('login/', views.index, name='login'),
-	path('signin/', views.index, name='signin'),
-	path('games/', views.index, name='game'),
-    path('pong/', views.index, name='pong'),
+    path('', views.pong, name='index'),
+    path('pong/', views.pong, name='pong'),
+	# path('login/', views.login, name='login'),
+	# path('signin/', views.index, name='signin'),
+	# path('games/', views.index, name='game'),
 ]

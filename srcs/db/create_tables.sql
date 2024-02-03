@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS "user" (
 	-- la table list_friend n'existe pas encore
 	-- on va ajouter une modification a la fin du script pour ajoute la reference
 	-- "list_friends_id" integer NOT NULL REFERENCES list_friends(id_list_friend)
-	"id_list_friend" INTEGER NOT NULL
+	"id_list_friend" INTEGER NULL
 );
 -- --------------------------------------------------------------------------
 -- Table game
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS "game" (
 	"id_game" SERIAL PRIMARY KEY,
 	"name" VARCHAR(50) NOT NULL,
 	"image" VARCHAR(255) NOT NULL DEFAULT '/var/www/default_game.webp',
-	"dascritpion" VARCHAR(1064) NOT NULL,
+	"dascritpion" VARCHAR(1024) NOT NULL,
 	"genre" VARCHAR(50) NULL
 );
 -- --------------------------------------------------------------------------

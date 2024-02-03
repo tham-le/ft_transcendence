@@ -42,3 +42,26 @@ export function resizeMain()
 	
 	main.style.marginTop = `${headerRect.bottom}px`;
 }
+
+export function createFormItem(labelText, inputType, inputId, options = []) {
+    const label = document.createElement('label');
+    label.classList.add('form-label');
+    label.setAttribute('for', inputId);
+    label.textContent = labelText;
+
+    const input = document.createElement('input');
+    input.classList.add('form-control');
+    input.type = inputType;
+    input.id = inputId;
+
+    if (options.length > 0) {
+        options.forEach(option => {
+            const optionElement = document.createElement('option');
+            optionElement.value = option.value;
+            optionElement.textContent = option.text;
+            input.appendChild(optionElement);
+        });
+    }
+
+    return { label, input };
+}
