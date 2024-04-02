@@ -27,9 +27,7 @@ jobs:
         echo "CLIENT_SECRET=${{ secrets.CLIENT_SECRET }}" >> .env
 
     - name: Build the Docker image
-      needs: Create .env file
       run: docker compose build
 
     - name: Run the Docker image
-      needs: Build the Docker image
       run: docker compose up
