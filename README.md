@@ -40,7 +40,7 @@ Transcendence is a web-based social gaming platform developed as the final proje
 1.  **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/<your-username>/tham-le-ft_transcendence.git  # Replace <your-username>
+    git clone https://github.com/tham-le/ft_transcendence.git
     cd tham-le-ft_transcendence
     ```
 
