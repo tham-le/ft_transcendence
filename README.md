@@ -2,17 +2,17 @@
 
 A full-stack web application featuring real-time multiplayer games with 3D graphics, tournaments, and social features.
 
-**Quick Start:** `docker compose up --build` → [https://localhost:8000](https://localhost:8000)
-
 ![Game Interface](image/game.png)
 
 ## Gameplay Preview
 
 ### 3D Pong
-<https://github.com/user-attachments/assets/gameplay-pong-3d.webm>
+
+<image/gameplay-pong-3d.webm>
 
 ### 3D Tic-Tac-Toe
-<https://github.com/user-attachments/assets/gameplay-tictactoe-3d.webm>
+
+<image/gameplay-tictactoe-3d.webm>
 
 ## Features
 
