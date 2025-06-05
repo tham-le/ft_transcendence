@@ -8,11 +8,11 @@ A full-stack web application featuring real-time multiplayer games with 3D graph
 
 ### 3D Pong
 
-<video src="image/gameplay-pong-3d.webm" controls width="600"></video>
+![3D Pong Gameplay](image/gameplay-pong-3d.gif)
 
 ### 3D Tic-Tac-Toe
 
-<video src="image/gameplay-tictactoe-3d.webm" controls width="600"></video>
+![3D Tic-Tac-Toe Gameplay](image/gameplay-tictactoe-3d.gif)
 
 ## Features
 
